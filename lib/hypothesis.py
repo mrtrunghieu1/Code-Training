@@ -48,3 +48,14 @@ def wilcoxon(cv_file, data, number_cv):
     print('Data: ',cv_file)
     for i in range(number_cv):
         print(scipy.stats.wilcoxon(data['arrErrSum'][i],data['arrErrProd'][i],zero_method='wilcox'))
+
+def wilcoxon_test(cv_file, data, number_cv):
+    print('------------ Kiem dinh Wilcoxon ------------')
+    print('Data: ',cv_file)
+    for i in range(number_cv):
+        print("----SUM AND SVM----")
+        print(scipy.stats.wilcoxon(data['arrErrSum'][i],data['arrErrSvm'][i],zero_method='wilcox'))
+        print("----SUM AND DECISION TREE----")
+        print(scipy.stats.wilcoxon(data['arrErrSum'][i],data['arrErrTree'][i],zero_method='wilcox'))
+        print("----SVM AND DECISION TREE----")
+        print(scipy.stats.wilcoxon(data['arrErrSvm'][i],data['arrErrTree'][i],zero_method='wilcox'))

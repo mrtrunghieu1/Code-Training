@@ -63,7 +63,7 @@ class Rules():
     def writer_output(self,cv_file, arrErrSum, arrErrProd, arrErrMin, arrErrMax):
         pickle_file = {'Dataset':cv_file,'arrErrSum':arrErrSum,'arrErrProd':arrErrProd,
                    'arrErrMin':arrErrMin,'arrErrMax':arrErrMax}
-        file_result = os.path.join(path.RESULT_PATH,"result_{}.pickle".format(cv_file))
+        file_result = os.path.join(path.RESULT_PATH,"result_fix_{}.pickle".format(cv_file))
         pickle_out = open(file_result, "wb")
         pickle.dump(pickle_file, pickle_out)
         pickle_out.close()
